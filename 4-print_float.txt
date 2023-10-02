@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+number = 3.14159
+
+# Format the float using the round() function
+formatted_number = round(number, 2)
+print(f"Float: {formatted_number}")
+
+
+
+#!/usr/bin/python3
+number = 3.14159
+
+# Format the float using the format() method
+formatted_number = "{:.2f}".format(number)
+print(f"Float: {formatted_number}")
+
+
+#!/usr/bin/python3
+number = 3.14159
+
+# Format the float using the % operator
+formatted_number = "%.2f" % number
+print("Float:", formatted_number)
