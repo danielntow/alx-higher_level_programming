@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+import os
+import compileall
+
+# Get the Python file name from the environment variable $PYFILE
+pyfile = os.environ.get("PYFILE")
+
+if pyfile:
+    # Generate the compiled bytecode file name by adding "c" extension
+    pycfile = pyfile + "c"
+
+    try:
+        # Compile the Python script and save the bytecode to the output file
+        compileall.compile_file(pyfile, force=True, legacy=True)
+        print(f"Compiled {pyfile} to {pycfile}")
+    except Exception as e:
+        print(f"Error compiling {pyfile}: {e}")
+else:
+    print("Environment variable $PYFILE not set.")
