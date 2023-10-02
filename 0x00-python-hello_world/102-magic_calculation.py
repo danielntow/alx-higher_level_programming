@@ -1,6 +1,12 @@
 def magic_calculation(a, b):
-    result = 98  # LOAD_CONST 1 (98)
-    result += a  # LOAD_FAST 0 (a)
-    result = result ** b  # LOAD_FAST 1 (b), BINARY_POWER
-    result += a  # BINARY_ADD
-    return result  # RETURN_VALUE
+    """Performs the same calculation as the following Python bytecode:
+
+    3           0 LOAD_CONST               1 (98)
+                3 LOAD_FAST                0 (a)
+                6 LOAD_FAST                1 (b)
+                9 BINARY_POWER
+               10 BINARY_ADD
+               11 RETURN_VALUE
+    """
+
+    return 98 ** a + b
