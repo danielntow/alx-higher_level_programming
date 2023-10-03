@@ -4,4 +4,4 @@
 alphabet = [chr(i) for i in range(ord('a'), ord('z') + 1)]
 
 # Printing the alphabet without newlines
-print("".join(alphabet))
+print(f"{''.join(alphabet)}")
