@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 
-# Program to print the ASCII alphabet in lowercase without a new line
-def print_alphabet():
-    for i in range(ord('a'), ord('z') + 1):
-        print("{}".format(chr(i)), end='')
-    print()
+# Using a list comprehension to generate the alphabet
+alphabet = [chr(i) for i in range(ord('a'), ord('z') + 1)]
 
-
-# Call the function to print the alphabet
-print_alphabet()
+# Printing the alphabet without newlines
+print("".join(alphabet))
