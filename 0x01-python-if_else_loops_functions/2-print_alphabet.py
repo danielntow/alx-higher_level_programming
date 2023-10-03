@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-output = ""
-
-for i in range(97, 123):
-    output += "{}".format(chr(i))
-print(output)
+for alphabet in range(97, 123):
+    print("{}".format(chr(alphabet)), end="")
