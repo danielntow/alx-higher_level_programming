@@ -18,3 +18,16 @@ def no_c(my_string):
             result += my_string[i]
         i += 1
     return result
+
+def no_c(my_string):
+  """Removes all occurrences of the characters 'c' and 'C' from a string.
+
+  Args:
+    my_string: A string.
+
+  Returns:
+    A string with all occurrences of the characters 'c' and 'C' removed.
+  """
+
+  result = ''.join(char for char in my_string if char not in 'cC')
+  return result
