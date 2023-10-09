@@ -11,4 +11,10 @@ def print_reversed_list_integer(my_list=[]):
     while my_list:
         num = my_list.pop()
         print("{:d}".format(num))
-#pop removes the last item in a list and returns it
+#pop removes the last item in a list and returns c
+
+
+
+def print_reversed_list_integer(my_list=[]):
+    for num in reversed(my_list):
+        print("{:d}".format(num))
