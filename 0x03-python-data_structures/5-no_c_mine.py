@@ -31,3 +31,10 @@ def no_c(my_string):
 
   result = ''.join(char for char in my_string if char not in 'cC')
   return result
+
+
+
+
+def no_c(my_string):
+    result = ''.join(map(lambda x: x if x not in 'cC' else '', my_string))
+    return result
