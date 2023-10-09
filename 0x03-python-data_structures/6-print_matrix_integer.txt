@@ -1,0 +1,33 @@
+def print_matrix_integer(matrix=[[]]):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+
+def print_matrix_integer(matrix=[[]]):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            print(matrix[i][j], end=" ")
+        print()
+
+def print_matrix_integer(matrix=[[]]):
+    for row in matrix:
+        print(" ".join(str(num) for num in row))
+
+
+
+def print_matrix_integer(matrix=[[]]):
+    for row in matrix:
+        for num in row:
+            print("{:d}".format(num), end=" ")
+        print()
+
+
+def print_matrix_integer(matrix=[[]]):
+    for row in matrix:
+        print(" ".join("{:d}".format(num) for num in row))
+
+
+
+def print_matrix_integer(matrix=[[]]):
+    for row in matrix:
+        print(" ".join("{:2d}".format(num) for num in row))

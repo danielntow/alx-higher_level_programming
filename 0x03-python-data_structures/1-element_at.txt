@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+def element_at(my_list, idx):
+    for numbers in my_list:
+        if my_list[idx] < 0:
+            return None
+        if my_list[idx] is not None:
+            return my_list[idx]
+        else:
+            return None
+
+
+def element_at(my_list, idx):
+    return my_list[idx] if 0 <= idx < len(my_list) else None
+
+
+def element_at(my_list, idx):
+    return my_list[idx] if 0 <= idx < len(my_list) else None
