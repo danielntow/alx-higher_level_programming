@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import roman
-
 
 def roman_to_ints(roman):
     roman_dict = {
