@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def roman_to_ints(roman):
+def roman_to_int(roman):
     roman_dict = {
         'I': 1,
         'V': 5,
