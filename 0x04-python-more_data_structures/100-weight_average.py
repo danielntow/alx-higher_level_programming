@@ -1,5 +1,4 @@
-
-
+#!/usr/bin/python3
 def weight_average(my_list=[]):
     if not my_list:
         return 0.0  # Return 0.0 if the list is empty to avoid division by zero
