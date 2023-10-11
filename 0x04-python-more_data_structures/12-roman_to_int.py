@@ -2,6 +2,6 @@
 import roman
 
 
-def roman_to_int(roman_string):
+def roman_to_ints(roman_string):
     result = roman.fromRoman(roman_string)
     return result
