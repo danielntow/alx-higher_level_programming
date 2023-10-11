@@ -13,3 +13,11 @@ def complex_delete(a_dictionary, value):
 
 def complex_delete(a_dictionary, value):
     return {key: val for key, val in a_dictionary.items() if val != value}
+
+
+# correct one
+def complex_delete(a_dictionary, value):
+    keys_to_delete = [key for key, val in a_dictionary.items() if val == value]
+    for key in keys_to_delete:
+        a_dictionary.pop(key, None)
+    return a_dictionary
