@@ -23,12 +23,3 @@ def roman_to_int(roman):
         prev_value = value
 
     return total
-
-    """
-    import roman
-
-
-    def roman_to_ints(roman_string):
-        result = roman.roman_to_int(roman_string)
-        return result
-    """
