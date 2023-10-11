@@ -13,7 +13,7 @@ def weight_average(my_list=[]):
             total_weight += weight
 
     if total_weight == 0:
-        return 0.0  # Handle the case where total_weight is 0 to avoid division by zero
+        return 0.0  # Handle e case er t_weight is 0 to avd division by zero
 
     weighted_avg = weighted_sum / total_weight
     return weighted_avg
