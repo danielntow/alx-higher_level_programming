@@ -49,9 +49,11 @@ def list_division(my_list_1, my_list_2, list_length):
     result = []
 
     try:
-        for elem1, elem2 in zip(my_list_1[:list_length], my_list_2[:list_length]):
+        for i in range(list_length):
             try:
-                if not (isinstance(elem1, (int, float)) and isinstance(elem2, (int, float))):
+                elem1 = my_list_1[i]
+                elem2 = my_list_2[i]
+                if not (isinstance(elem1, (int, float)) and isinstance(elem2, (int, float)):
                     print("wrong type")
                     result.append(0)
                 elif elem2 == 0:
@@ -59,12 +61,14 @@ def list_division(my_list_1, my_list_2, list_length):
                     result.append(0)
                 else:
                     result.append(elem1 / elem2)
+            except (IndexError, TypeError, ValueError):
+                print("out of range")
+                result.append(0)
             except ZeroDivisionError:
                 print("division by 0")
                 result.append(0)
 
-    except IndexError:
-        print("out of range")
-
     finally:
         return result
+
+
