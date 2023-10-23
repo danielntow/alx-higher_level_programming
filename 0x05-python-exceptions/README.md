@@ -2,14 +2,6 @@
 
 This project provides an overview of Python exceptions, their usage, and best practices for handling errors and exceptions in Python.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Types of Exceptions](#types-of-exceptions)
-- [Raising Exceptions](#raising-exceptions)
-- [Handling Exceptions](#handling-exceptions)
-- [Custom Exceptions](#custom-exceptions)
-- [Best Practices](#best-practices)
 
 ## Introduction
 

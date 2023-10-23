@@ -37,3 +37,17 @@ def safe_print_list(my_list=[], x=0):
             break
     print()
     return printed_count
+
+
+def safe_print_list(my_list=[], x=0):
+    count = 0  # Initialize a counter for the number of elements printed
+    try:
+        for item in my_list:
+            if count >= x:
+                break  # Exit the loop once x elements are printed
+            print(item, end=" ")  # Print the element followed by a space
+            count += 1  # Increment the counter
+        print()  # Print a new line after all elements
+    except IndexError:
+        pass  # Handle the case where x is larger than the length of my_list
+    return count  # Return the count of printed elements
