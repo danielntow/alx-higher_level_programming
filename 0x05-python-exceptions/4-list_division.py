@@ -53,7 +53,7 @@ def list_division(my_list_1, my_list_2, list_length):
             try:
                 elem1 = my_list_1[i]
                 elem2 = my_list_2[i]
-                if not (isinstance(elem1, (int, float)) and isinstance(elem2, (int, float)):
+                if not (isinstance(elem1, (int, float)) and isinstance(elem2, (int, float))):
                     print("wrong type")
                     result.append(0)
                 elif elem2 == 0:
@@ -70,5 +70,3 @@ def list_division(my_list_1, my_list_2, list_length):
 
     finally:
         return result
-
-
