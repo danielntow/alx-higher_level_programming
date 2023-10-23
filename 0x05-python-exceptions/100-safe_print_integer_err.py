@@ -21,3 +21,13 @@ def safe_print_integer_err(value):
         error_message = f"Exception: {e}"
         print(error_message, file=sys.stderr)
         return False
+
+
+def safe_print_integer_err(value):
+    try:
+        print("{:d}".format(value))
+        return True
+    except (TypeError, ValueError) as e:
+        error_message = f"Exception: {e}"
+        sys.stderr.write(error_message + "\n")
+        return False
