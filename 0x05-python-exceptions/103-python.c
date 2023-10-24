@@ -1,6 +1,7 @@
 #include <Python.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <Python.h>
 
 /**
  * print_python_list - Print information about a Python list.
@@ -23,12 +24,12 @@ void print_python_list(PyObject *p)
         for (i = 0; i < size; i++)
         {
             item = ((PyListObject *)p)->ob_item[i];
-            printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
+            printf("Element %ld: %s\n", i, ((PyObject *)item)->ob_type->tp_name);
         }
     }
     else
     {
-        fprintf(stderr, "[ERROR] Invalid List Object\n");
+        fprintf(stderr, "Invalid List Object\n");
     }
 }
 
