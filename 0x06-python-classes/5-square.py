@@ -59,7 +59,7 @@ class Square:
         Prints the area of the square as #
 
         """
-        if self.area == 0:
+        if self.__size == 0:
             print()
         else:
             for _ in range(self.__size):
