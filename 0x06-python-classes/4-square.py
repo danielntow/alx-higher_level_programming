@@ -52,4 +52,4 @@ class Square:
             value (int): The size of the square.
         """
 
-        return self.__size == value
+        self.__size = value
