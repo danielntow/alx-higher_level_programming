@@ -59,10 +59,19 @@ class Square:
 
     @property
     def position(self):
+        """
+        Getter method for retrieving the position attribute.
+        """
         return self._position
 
     @position.setter
     def position(self, value):
+        """
+        Setter method for setting the position attribute.
+
+        Args:
+            value (tuple): The position of the square.
+        """
         if not isinstance(value, tuple) and len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         self._position = value
