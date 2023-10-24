@@ -15,16 +15,35 @@ class Square:
 
         Args:
             size (int, optional): The size of the square (default is 0).
-            position (tuple, optional): The position of the square (default is (0, 0)).
+            position (any):
         """
-        self.size = size
-        self.position = position
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
+
+        self.__position = position
+
+    def area(self):
+        """
+        Computes the area of the square.
+
+        Returns:
+            int: The area of the square.
+        """
+        return self.__size ** 2
 
     @property
     def size(self):
         """
-        Getter method for retrieving the size attribute.
+        Getter method for setting the size attribute.
+
+        Args:
+            value (int): The size of the square.
         """
+
         return self.__size
 
     @size.setter
@@ -35,12 +54,8 @@ class Square:
         Args:
             value (int): The size of the square.
         """
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+
+        self.__init__(value)
 
     @property
     def position(self):
@@ -57,26 +72,14 @@ class Square:
         Args:
             value (tuple): The position of the square.
         """
-        if not isinstance(value, tuple) or len(value) != 2 or \
-                not all(isinstance(x, int) and x >= 0 for x in value):
+        if not isinstance(value, tuple) and len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
-
-    def area(self):
-        """
-        Computes the area of the square.
-
-        Returns:
-            int: The area of the square.
-        """
-        return self.__size ** 2
+        self.__position = value
 
     def my_print(self):
         """
-        Prints the square with '#' characters.
+        Prints the area of the square as #
 
-        The square is positioned according to the 'position' attribute.
         """
         if self.__size == 0:
             print()
