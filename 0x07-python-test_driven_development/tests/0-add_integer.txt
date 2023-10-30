@@ -1,0 +1,33 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# Test case 1: Adding two integers
+>>> add_integer(5, 3)
+8
+
+# Test case 2: Adding a float and an integer
+>>> add_integer(5.5, 3)
+8
+
+# Test case 3: Adding two floats
+>>> add_integer(5.3, 3.7)
+8
+
+# Test case 4: Adding a non-integer to an integer (should raise a TypeError)
+>>> add_integer("5", 3)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test case 5: Adding two non-integers (should raise a TypeError)
+>>> add_integer("5", "3")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test case 6: Adding negative integers
+>>> add_integer(-5, -3)
+-8
+
+# Test case 7: Adding maximum int values
+>>> add_integer(2147483647, 2147483647)
+4294967294
