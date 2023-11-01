@@ -13,19 +13,6 @@ def magic_string(my_list=[]):
 
 
 def magic_string():
-    """
-    Generates a string containing 'BestSchool' repeated a
-    number of times based on the iteration.
-
-    Returns:
-        str: A string where 'BestSchool' is repeated the
-        number of times corresponding to the iteration number.
-    """
-    # Get the current value of the counter attribute and increment it
     magic_string.counter = getattr(
-        magic_string, 'counter', 0
-    ) + 1
-
-    # Join 'BestSchool' strings using comma and space based
-    # on the current value of the counter
+        magic_string, 'counter', 0) + 1
     return ", ".join(["BestSchool"] * magic_string.counter)
