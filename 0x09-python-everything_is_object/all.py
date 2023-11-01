@@ -85,3 +85,15 @@ print(sys.intern(s1) is sys.intern(s2))
 a = (1)
 print(type(a))
 print(isinstance(a, tuple))
+
+
+a = ()
+b = ()
+print(a is b)
+print(a == b)
+
+
+a = (1, 2)
+b = (1, 2)
+print(a is b)
+print(a == b)
