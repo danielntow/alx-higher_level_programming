@@ -70,6 +70,13 @@ class Rectangle:
             ['#' * self.__width for _ in range(self.__height)]
         ) if self.__width != 0 and self.__height != 0 else ""
 
+    def __str__(self) -> str:
+        """Returns a string representation of the rectangle."""
+        if self.__height == 0 or self.__height == 0:
+            return ""
+        else:
+            return '\n'.join(['#' * self.__width] * self.__height)
+
 
 class Rectangle:
     """
@@ -141,7 +148,7 @@ class Rectangle:
         else:
             return 2 * (self.__width + self.__height)
 
-    def __str__(self) -> str:
+    def __str__(self):
         """Returns a string representation of the rectangle."""
         if self.__height == 0 or self.__height == 0:
             return ""
