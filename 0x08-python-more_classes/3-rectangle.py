@@ -75,7 +75,11 @@ class Rectangle:
         if self.__height == 0 or self.__height == 0:
             return ""
         else:
-            return '\n'.join(['#' * self.__width] * self.__height)
+            string = ""
+            for j in range(self.width):
+                for i in range(self.height):
+                    string += "#"
+                return string
 
 
 class Rectangle:
@@ -153,4 +157,4 @@ class Rectangle:
         if self.__height == 0 or self.__height == 0:
             return ""
         else:
-            return ("\n".join("#" * self.__width for _ in range(self.__height)))
+            return '\n'.join(['#' * self.__width] * self.__height)
