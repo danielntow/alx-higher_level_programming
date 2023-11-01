@@ -79,7 +79,7 @@ class Rectangle:
             for j in range(self.width):
                 for i in range(self.height):
                     string += "#"
-                return string
+            return string
 
 
 class Rectangle:
