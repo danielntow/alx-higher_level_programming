@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import sys
 
 l1 = [1, 2, 3]
 l2 = l1
@@ -74,3 +75,9 @@ a = ()
 b = ()
 print(a is b)
 print(a == b)
+
+s1 = "Best School"
+s2 = "Best School"
+print(s1 is s2)
+print(s1 == s2)
+print(sys.intern(s1) is sys.intern(s2))
