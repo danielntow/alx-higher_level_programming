@@ -173,7 +173,9 @@ class Rectangle:
         if self.__height == 0 or self.__height == 0:
             return str()
         else:
-            return '\n'.join([str(self.print_symbol) * self.__width] * self.__height)
+            return '\n'.join([
+                str(self.print_symbol) * self.__width
+            ] * self.__height)
 
     def __repr__(self):
         """Returns a string representation to recreate a new instance."""
