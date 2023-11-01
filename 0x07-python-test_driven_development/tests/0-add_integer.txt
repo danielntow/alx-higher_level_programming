@@ -31,3 +31,9 @@ TypeError: a must be an integer
 # Test case 7: Adding maximum int values
 >>> add_integer(2147483647, 2147483647)
 4294967294
+
+# Test case 4: Adding a non-integer to an integer (should raise a TypeError)
+>>> add_integer(5, "3")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer

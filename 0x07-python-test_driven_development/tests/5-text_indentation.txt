@@ -1,0 +1,89 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+>>> text_indentation("Hello. How are you? I'm fine.")
+Hello.
+
+How are you?
+
+I'm fine.
+
+>>> text_indentation("Sentence one. Sentence two.")
+Sentence one.
+
+Sentence two.
+
+>>> text_indentation("Test.:Case?")
+Test.
+
+Case.
+
+>>> text_indentation("Sample text. With more text.")
+Sample text.
+
+With more text.
+
+>>> text_indentation("")
+
+
+>>> text_indentation(".?.:")
+
+
+>>> text_indentation("Test")
+Test
+
+
+>>> text_indentation("Example.  With  extra  spaces.")
+Example.
+
+With
+
+extra
+
+spaces.
+
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+>>> text_indentation("Text. With\nnew lines?")
+Text.
+
+With
+
+new lines.
+
+
+>>> text_indentation("Text.\tWith\ttabs?")
+Text.
+
+With
+
+tabs.
+
+
+>>> text_indentation("Text: With: Colons?")
+Text.
+
+With.
+
+Colons.
+
+
+>>> text_indentation("A?B.C:D")
+A?
+
+B.
+
+C.
+
+D
+
+
+>>> text_indentation("  Text with leading and trailing spaces.  ")
+Text with leading and trailing spaces.
+
+
+
