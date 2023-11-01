@@ -98,7 +98,8 @@ class Rectangle:
         Private attribute to store the height of the rectangle.
     """
 
-    number_of_instances = 0
+    number_of_instances = 0  # Public class attribute initialized to 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0) -> None:
         """
@@ -172,7 +173,7 @@ class Rectangle:
         if self.__height == 0 or self.__height == 0:
             return str()
         else:
-            return '\n'.join(['#' * self.__width] * self.__height)
+            return '\n'.join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """Returns a string representation to recreate a new instance."""
