@@ -90,6 +90,8 @@ class Rectangle:
         Private attribute to store the height of the rectangle.
     """
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0) -> None:
         """
         Initializes a Rectangle object.
@@ -107,6 +109,15 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        self.instances_created()
+
+    @classmethod
+    def instances_created(cls):
+        cls.number_of_instances += 1
+
+    @classmethod
+    def instances_deleted(cls):
+        cls.number_of_instances -= 1
 
     @property
     def width(self):
@@ -162,3 +173,4 @@ class Rectangle:
     def __del__(self):
         """Prints a message when an instance of Rectangle is deleted."""
         print("Bye rectangle...")
+        self.instances_deleted()
