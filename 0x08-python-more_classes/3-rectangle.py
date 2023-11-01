@@ -75,13 +75,7 @@ class Rectangle:
         if self.__height == 0 or self.__height == 0:
             return ""
         else:
-            string = ""
-            for i in range(0, self.__height):
-                for j in range(0, self.__width):
-                    string = string + "#"
-                if i != self.__height - 1:
-                    string = string + "\n"
-            return string
+            return '\n'.join(['#' * self.__width] * self.__height)
 
 
 class Rectangle:
@@ -159,4 +153,10 @@ class Rectangle:
         if self.__height == 0 or self.__height == 0:
             return ""
         else:
-            return '\n'.join(['#' * self.__width] * self.__height)
+            string = ""
+            for i in range(0, self.__height):
+                for j in range(0, self.__width):
+                    string = string + "#"
+                if i != self.__height - 1:
+                    string = string + "\n"
+            return string
