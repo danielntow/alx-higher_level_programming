@@ -81,3 +81,7 @@ s2 = "Best School"
 print(s1 is s2)
 print(s1 == s2)
 print(sys.intern(s1) is sys.intern(s2))
+
+a = (1)
+print(type(a))
+print(isinstance(a, tuple))
