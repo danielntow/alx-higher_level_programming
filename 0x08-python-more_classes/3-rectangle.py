@@ -151,6 +151,6 @@ class Rectangle:
     def __str__(self) -> str:
         """Returns a string representation of the rectangle."""
         if self.__height == 0 or self.__height == 0:
-            return str
+            return str()
         else:
             return '\n'.join(['#' * self.__width] * self.__height)
