@@ -148,9 +148,9 @@ class Rectangle:
         else:
             return 2 * (self.__width + self.__height)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Returns a string representation of the rectangle."""
         if self.__height == 0 or self.__height == 0:
             return ""
         else:
-            return '\n'.join(['#' * self.__width] * self.__height)
+            return ("\n".join("#" * self.__width for _ in range(self.__height)))
