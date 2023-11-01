@@ -50,6 +50,26 @@ class Rectangle:
         else:
             self.__height = value
 
+    def __str__(self):
+        """Returns a string representation of the rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            return '\n'.join(
+                ['#' * self.__width for _ in range(self.__height)])
+
+    def __str__(self):
+        """Returns a string representation of the rectangle."""
+        return '\n'.join(
+            '#' * self.__width for _ in range(self.__height)
+        ) if self.__width != 0 and self.__height != 0 else ""
+
+    def __str__(self):
+        """Returns a string representation of the rectangle."""
+        return '\n'.join(
+            ['#' * self.__width for _ in range(self.__height)]
+        ) if self.__width != 0 and self.__height != 0 else ""
+
 
 class Rectangle:
     """
@@ -120,3 +140,9 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
+
+    def __str__(self) -> str:
+        if self.__height == 0 or self.__height == 0:
+            return ""
+        else:
+            return '\n'.join(['#' * self.__width] * self.__height)
