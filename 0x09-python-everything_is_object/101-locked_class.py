@@ -25,3 +25,11 @@ class LockedClass:
 
     def __init__(self):
         self.first_name = ""
+
+
+class LockedClass:
+    """
+    Class that restrict the dynamically creating
+    instance with certain condition
+    """
+    __slots__ = ["first_name"]
