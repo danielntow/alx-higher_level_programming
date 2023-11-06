@@ -31,3 +31,11 @@
 >>> my_list.append("what")
 >>> my_list.print_sorted()
 ['for', 'what']
+
+
+>>> my_list = ['me', 2, 4, 'you']
+>>> print_list = MyList(my_list)
+>>> print_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: '<' not supported between instances of 'int' and 'str'
