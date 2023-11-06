@@ -14,18 +14,6 @@ class MyList(list):
         """
         Prints the list in ascending sorted order.
         """
-        has_int = False
-        has_str = False
-
-        for member in self:
-            if isinstance(member, int):
-                has_int = True
-            elif isinstance(member, str):
-                has_str = True
-
-        if has_int and has_str:
-            raise TypeError(
-                "'<' not supported between instances of 'int' and 'str'")
-
-        sorted_list = sorted(self)  # Sort the list in ascending order
-        print(sorted_list)  # Print the sorted list
+        # Sort the list and print in ascending order
+        sorted_list = sorted(self)
+        print(sorted_list)
