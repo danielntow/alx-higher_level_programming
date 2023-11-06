@@ -70,5 +70,12 @@ class Rectangle(BaseGeometry):
         self.__width = width  # Setting the validated width
         self.__height = height  # Setting the validated height
 
+    def __str__(self):
+        """ string representation of rectangle """
+        return f"{self.__width}/{self.__height}"
 
-r = Rectangle(3, 5)
+    def area(self):
+        """
+        returns the area pf the rectangle
+        """
+        return self.__width * self.__height
