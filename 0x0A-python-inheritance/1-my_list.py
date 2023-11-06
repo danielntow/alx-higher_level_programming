@@ -14,6 +14,9 @@ class MyList(list):
         """
         Prints the list in ascending sorted order.
         """
+        has_int = False
+        has_str = False
+
         for member in self:
             if isinstance(member, int):
                 has_int = True
@@ -26,8 +29,3 @@ class MyList(list):
 
         sorted_list = sorted(self)  # Sort the list in ascending order
         print(sorted_list)  # Print the sorted list
-
-
-my_list = ['me', 2, 4, 'you']
-print_list = MyList(my_list)
-print_list.print_sorted()
