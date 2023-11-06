@@ -1,3 +1,4 @@
+"""this tests tests my list"""
 >>> MyList = __import__('1-my_list').MyList
 
 # Creating an instance of MyList
