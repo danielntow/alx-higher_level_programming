@@ -6,8 +6,8 @@ module that sorts a list
 
 class MyList(list):
     """
-    MyList class that inherits from list and includes a method
-    to print the list in sorted order.
+    MyList class that inherits from list and
+    print the list in sorted order.
     """
 
     def print_sorted(self):
