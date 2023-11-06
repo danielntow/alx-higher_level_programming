@@ -1,0 +1,69 @@
+#!/usr/bin/python3
+
+"""
+a module depicting BaseGeomety
+"""
+
+
+class BaseGeometry:
+    """
+    A base class representing geometric entities.
+
+    This class serves as the foundation for geometric
+    calculations and structures.
+    It's designed to be inherited by specific geometric
+    entities to extend functionality.
+    """
+
+    def area(self):
+        """
+        Raises an Exception indicating that the area()
+        method is not implemented.
+
+        Raises:
+            Exception: Indicates that the area()
+            method is not implemented in the subclass.
+        """
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """
+        Validates the value provided ensuring it is an
+        integer and greater than 0.
+
+        Args:
+            name (str): A string representing the name of the value.
+            value: The value to be validated.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
+
+
+class Rectangle(BaseGeometry):
+    """
+    A class representing a Rectangle, inheriting from BaseGeometry.
+
+    This class manages the properties and calculations specific to rectangles.
+    """
+
+    def __init__(self, width, height):
+        """
+        Initializes a Rectangle with specified width and height.
+
+        Args:
+            width (int): Width of the rectangle (positive integer).
+            height (int): Height of the rectangle (positive integer).
+        """
+        super().__init__()
+        self.__width = 0  # Initializing private attribute for width
+        self.__height = 0  # Initializing private attribute for height
+        self.integer_validator("width", width)  # Validating width
+        self.integer_validator("height", height)  # Validating height
+        self.__width = width  # Setting the validated width
+        self.__height = height  # Setting the validated height
