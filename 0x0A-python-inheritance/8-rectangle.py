@@ -63,7 +63,8 @@ class Rectangle(BaseGeometry):
         super().__init__()
         self.__width = 0  # Initializing private attribute for width
         self.__height = 0  # Initializing private attribute for height
-        self.integer_validator("width", width)  # Validating width
-        self.integer_validator("height", height)  # Validating height
+        # Validating width and height
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width  # Setting the validated width
         self.__height = height  # Setting the validated height
