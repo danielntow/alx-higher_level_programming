@@ -1,0 +1,26 @@
+>>> MyList = __import__('1-my_list').MyList
+
+# Creating an instance of MyList
+>>> my_list = MyList([4, 2, 6, 1, 9, 3])
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 6, 9]
+
+# Testing with an empty list
+>>> empty_list = MyList([])
+>>> empty_list.print_sorted()
+[]
+
+# Testing with a single-element list
+>>> single_element_list = MyList([5])
+>>> single_element_list.print_sorted()
+[5]
+
+# Testing with a list of negative integers
+>>> negative_list = MyList([-4, -2, -6, -1, -9, -3])
+>>> negative_list.print_sorted()
+[-9, -6, -4, -3, -2, -1]
+
+# Testing with a larger list
+>>> large_list = MyList([100, 200, 50, 75, 25, 300, 150])
+>>> large_list.print_sorted()
+[25, 50, 75, 100, 150, 200, 300]
