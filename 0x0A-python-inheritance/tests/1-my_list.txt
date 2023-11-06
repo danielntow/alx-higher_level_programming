@@ -24,3 +24,10 @@
 >>> large_list = MyList([100, 200, 50, 75, 25, 300, 150])
 >>> large_list.print_sorted()
 [25, 50, 75, 100, 150, 200, 300]
+
+# Testing with a list containing strings and integers
+>>> my_list = MyList()
+>>> my_list.append("for")
+>>> my_list.append("what")
+>>> my_list.print_sorted()
+['for', 'what']
