@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+module that checks the sub_class of an object
+"""
+
+
 def inherits_from(obj, a_class):
     """
     Checks if the object is an instance of a class that inherited
