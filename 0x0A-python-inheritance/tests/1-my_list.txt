@@ -39,3 +39,14 @@
 Traceback (most recent call last):
     ...
 TypeError: '<' not supported between instances of 'int' and 'str'
+
+
+# Testing with a list of negative and positive integers
+>>> negative_positive = MyList([-4, 2, -6, 1, -9, 3])
+>>> negative_positive.print_sorted()
+[-9, -6, -4, 1, 2, 3]
+
+# Testing with a list of strings only
+>>> string_list = MyList(["dog", "apple", "cat", "ball"])
+>>> string_list.print_sorted()
+['apple', 'ball', 'cat', 'dog']
