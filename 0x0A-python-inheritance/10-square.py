@@ -82,7 +82,7 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
 
-class Square(Rectangle):
+class SquareNotPart(Rectangle):
     """
     Square class inhertits from Rectangle
 
@@ -109,3 +109,29 @@ class Square(Rectangle):
             str: Square description in the format [Square] <size>/<size>
         """
         return f"[Square] {self.size}/{self.size}"
+
+
+class Square(Rectangle):
+    """
+    Square class inhertits from Rectangle
+
+    This Class Clculates the area of a square
+    """
+
+    def __init__(self, size,):
+        """
+        Initializes a Square with the specified size.
+
+        Args:
+            size (int): Size of the square (positive integer).
+        """
+
+        super().__init__(size, size)
+
+    def area(self):
+        """caculates area of a square
+
+        Returns:
+            int: calulates are of a square
+        """
+        return super().area()
