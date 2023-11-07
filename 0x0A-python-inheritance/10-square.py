@@ -115,7 +115,7 @@ class Square(Rectangle):
     """
     Square class inhertits from Rectangle
 
-    This Class Clculates the area of a square
+    This Class calculates the area of a square
     """
 
     def __init__(self, size,):
@@ -127,11 +127,3 @@ class Square(Rectangle):
         """
 
         super().__init__(size, size)
-
-    def area(self):
-        """caculates area of a square
-
-        Returns:
-            int: calulates are of a square
-        """
-        return super().area()
