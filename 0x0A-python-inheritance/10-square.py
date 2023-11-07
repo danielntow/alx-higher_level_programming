@@ -19,4 +19,5 @@ class Square(Rectangle):
         Args:
             size (int): Size of the square (positive integer).
         """
-        super().__init__(size, size)  # Initialize using size for both width and height
+        # Initialize using size for both width and height
+        super().__init__(size, size)
