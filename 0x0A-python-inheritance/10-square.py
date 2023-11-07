@@ -91,21 +91,13 @@ class Square(Rectangle):
 
     def __init__(self, size,):
         super().__init__(size, size)
-
-    @property
-    def size(self):
-        return self._Rectangle__width
-
-    @size.setter
-    def size(self, value):
-        self.integer_validator("size", value)  # Validate the size
-        self.width = value
+        self.size = self._Rectangle__width
 
     def area(self):
         """caculates area of a square
 
         Returns:
-            _type_: _description_
+            int: calulates are of a square
         """
         return super().area()
 
