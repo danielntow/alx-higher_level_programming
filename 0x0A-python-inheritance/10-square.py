@@ -80,3 +80,40 @@ class Rectangle(BaseGeometry):
         returns the area pf the rectangle
         """
         return self.__width * self.__height
+
+
+class Square(Rectangle):
+    """
+    Square class inhertits from Rectangle
+
+    This Class Clculates the area of a square
+    """
+
+    def __init__(self, size,):
+        super().__init__(size, size)
+
+    @property
+    def size(self):
+        return self._Rectangle__width
+
+    @size.setter
+    def size(self, value):
+        self.integer_validator("size", value)  # Validate the size
+        self.width = value
+
+    def area(self):
+        """caculates area of a square
+
+        Returns:
+            _type_: _description_
+        """
+        return super().area()
+
+    def __str__(self):
+        """
+        String representation of the Square.
+
+        Returns:
+            str: Square description in the format [Square] <size>/<size>
+        """
+        return f"[Square] {self.size}/{self.size}"
