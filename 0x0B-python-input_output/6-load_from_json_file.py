@@ -14,7 +14,7 @@ def load_from_json_file(filename):
         filename (str): The name of the file to save the python obj.
 
     Returns:
-        None.
+        object: The Python object represented by the JSON file content.
     """
-    with open(filename, "w", encoding="utf-8") as file:
-        json.loads(file)
+    with open(filename, 'r') as file:
+        return json.load(file)
