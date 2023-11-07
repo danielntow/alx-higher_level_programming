@@ -3,6 +3,16 @@
 """ module that adds attributes"""
 
 
+def add_attribute(obj, name, value):
+    """
+    function that add new attribute if possible
+    """
+    if hasattr(obj, "__dict__"):
+        setattr(obj, name, value)
+    else:
+        raise TypeError("can't add new attribute")
+
+
 def add_attribute(obj, attr, value):
     """
     Adds a new attribute to an object if possible.
