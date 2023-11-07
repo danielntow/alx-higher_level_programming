@@ -118,10 +118,6 @@ class Square(Rectangle):
     """
     Square class inhertits from Rectangle
 
-    Initializes a Square with the specified size.
-
-    Args:
-        size (int): Size of the square (positive integer).
     """
 
     def __init__(self, size):
