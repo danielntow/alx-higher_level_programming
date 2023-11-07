@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
 module demonstrating python i/o
 """
@@ -8,8 +8,13 @@ import json
 
 def to_json_string(my_obj):
     """
-    function that returns json repr of an onj
+    Convert a Python object to its JSON representation.
 
+    Args:
+    my_obj: The Python object to be converted to JSON.
+
+    Returns:
+    A JSON-formatted string representing the Python object.
     """
-
-    return json.dumps(my_obj)
+    json_string = json.dumps(my_obj)
+    return json_string
