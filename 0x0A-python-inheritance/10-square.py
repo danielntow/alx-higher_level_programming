@@ -123,15 +123,19 @@ class Square(Rectangle):
     def __init__(self, size):
         """
         Initializes a Square with the specified size.
-
-        Args:
-            size (int): Size of the square (positive integer).
         """
         self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
+        """ calculates the area of the square """
         return self.__size ** 2
 
     def __str__(self):
+        """
+        String representation of the Square.
+
+        Returns:
+            str: Square description in the format [Rectangle] <size>/<size>
+        """
         return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
