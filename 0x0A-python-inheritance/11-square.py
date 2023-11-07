@@ -29,12 +29,3 @@ class Square(Rectangle):
             str: Square description in the format [Square] <width>/<height>
         """
         return f"[Square] {self._Rectangle__width}/{self._Rectangle__height}"
-
-    def __repr__(self):
-        """
-        Representation of the Square.
-
-        Returns:
-            str: Square representation including class name and dimensions.
-        """
-        return f"Square({self._Rectangle__width})"
