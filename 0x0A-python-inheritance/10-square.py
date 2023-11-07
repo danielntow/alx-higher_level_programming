@@ -7,15 +7,16 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """
-    Square class inherits from Rectanagle
+    A class representing a Square, inheriting from Rectangle.
+
+    This class manages the properties and calculations specific to squares.
     """
 
     def __init__(self, size):
-        self.integer_validator("size", size)
-        self.__size = size
+        """
+        Initializes a Square with the specified size.
 
-    def area(self):
-        return self.__size ** 2
-
-    def __str__(self):
-        return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
+        Args:
+            size (int): Size of the square (positive integer).
+        """
+        super().__init__(size, size)  # Initialize using size for both width and height
