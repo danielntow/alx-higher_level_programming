@@ -86,7 +86,10 @@ class SquareNotPart(Rectangle):
     """
     Square class inhertits from Rectangle
 
-    This Class Clculates the area of a square
+    Initializes a Square with the specified size.
+
+        Args:
+            size (int): Size of the square (positive integer).
     """
 
     def __init__(self, size,):
@@ -115,7 +118,10 @@ class Square(Rectangle):
     """
     Square class inhertits from Rectangle
 
-    This Class calculates the area of a square
+    Initializes a Square with the specified size.
+
+    Args:
+        size (int): Size of the square (positive integer).
     """
 
     def __init__(self, size,):
