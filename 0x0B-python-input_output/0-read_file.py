@@ -15,8 +15,6 @@ def read_file(filename=""):
     Default is an empty string.
     :return: None
     """
-    try:
-        with open(filename, 'r', encoding='utf-8') as file:
-            print(file.read())
-    except FileNotFoundError:
-        pass
+
+    with open(filename, 'r', encoding='utf-8') as file:
+        print(file.read())
