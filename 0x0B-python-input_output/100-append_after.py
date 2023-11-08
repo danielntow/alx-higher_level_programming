@@ -19,11 +19,11 @@ def append_after(filename="", search_string="", new_string=""):
         None
     """
     lines = []
-    with open(filename, 'r') as file:
+    with open(filename, "r") as file:
         for line in file:
             lines.append(line)
             if search_string in line:
-                lines.append(new_string + '\n')
+                lines.append(new_string + "\n")
 
-    with open(filename, 'w') as file:
+    with open(filename, "w") as file:
         file.writelines(lines)
