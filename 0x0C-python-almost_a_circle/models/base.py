@@ -163,7 +163,9 @@ class Base:
             with open(filename, 'r') as file:
                 content = file.read()
                 dictionaries_list = cls.from_json_string(content)
-                return [cls.create(**dictionary) for dictionary in dictionaries_list]
+                return [cls.create(
+                    **dictionary
+                ) for dictionary in dictionaries_list]
         except FileNotFoundError:
             return []
 
@@ -236,7 +238,8 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """
-        Opens a window and draws all the Rectangles and Squares using Turtle graphics.
+        Opens a window and draws all the Rectangles and Squares-
+        using Turtle graphics.
 
         Args:
             list_rectangles: List of Rectangle instances.
