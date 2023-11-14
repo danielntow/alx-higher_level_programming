@@ -6,7 +6,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestBase(unittest.TestCase):
+class Test_Base(unittest.TestCase):
 
     def setUp(self):
         # Reset the Base class id counter before each test
