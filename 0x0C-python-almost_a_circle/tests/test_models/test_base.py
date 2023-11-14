@@ -54,6 +54,42 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(loaded_square2.x, 4)
         self.assertEqual(loaded_square2.y, 5)
 
+    def test_to_json_string_serialization(self):
+        """
+        Test JSON serialization.
+        """
+        Base._Base__nb_objects = 0
+        input_shapes = [{"id": 1, "width": 2, "height": 3},
+                        {"id": 2, "width": 4, "height": 5}]
+        expected_output = '[{"id": 1, "width": 2, "height": 3}, {"id": 2, "width": 4, "height": 5}]'
+        empty_list = []
+
+        self.assertEqual(Base.to_json_string(input_shapes), expected_output)
+        self.assertEqual(Base.to_json_string(empty_list), '[]')
+
+        self.assertEqual(Base.to_json_string(None), "[]")
+
+        self.assertEqual(type(input_shapes), list)
+        with self.assertRaises(NameError):
+            Base.to_json_string(input_shapes_3)
+
+    def test_save_to_file_saving(self):
+        """
+        Test saving to file.
+        """
+        filename = "ModifiedRectangle.json"
+        r1 = Rectangle(1, 2)
+        r2 = Rectangle(3, 4)
+        Rectangle.save_to_file([r1, r2])
+
+        loaded_rectangles = Rectangle.load_from_file()
+
+        self.assertEqual(len(loaded_rectangles), 2)
+        self.assertEqual(
+            loaded_rectangles[0].to_dictionary(), r1.to_dictionary())
+        self.assertEqual(
+            loaded_rectangles[1].to_dictionary(), r2.to_dictionary())
+
 
 if __name__ == '__main__':
     unittest.main()
