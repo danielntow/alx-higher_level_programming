@@ -34,6 +34,26 @@ class Test_Base(unittest.TestCase):
         instances = Base.load_from_file()
         self.assertEqual(instances, [])
 
+    def test_create_and_load_from_file(self):
+        square1 = Square(5, 1, 2, 3)
+        square2 = Square(8, 4, 5, 6)
+        Square.save_to_file([square1, square2])
+
+        loaded_squares = Square.load_from_file()
+        self.assertEqual(len(loaded_squares), 2)
+
+        loaded_square1 = loaded_squares[0]
+        loaded_square2 = loaded_squares[1]
+
+        self.assertEqual(loaded_square1.id, 3)
+        self.assertEqual(loaded_square1.size, 5)
+        self.assertEqual(loaded_square1.x, 1)
+        self.assertEqual(loaded_square1.y, 2)
+
+        self.assertEqual(loaded_square2.size, 8)
+        self.assertEqual(loaded_square2.x, 4)
+        self.assertEqual(loaded_square2.y, 5)
+
 
 if __name__ == '__main__':
     unittest.main()
