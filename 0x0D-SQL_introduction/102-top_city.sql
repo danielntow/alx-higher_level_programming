@@ -1,7 +1,8 @@
 -- mysql
 USE hbtn_0c_0;
-SELECT city,
-AVG((value - 32) * 5/9) AS average_temperature
-FROM temperatures WHERE (month = 7 OR month = 8)
+SELECT city, AVG(value) as avg_temp
+FROM temperatures
+WHERE month IN (7, 8)
 GROUP BY city
-ORDER BY average_temperature DESC LIMIT 3;
+ORDER BY avg_temp DESC
+LIMIT 3
