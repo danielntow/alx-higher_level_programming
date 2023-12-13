@@ -1,7 +1,6 @@
 -- list all
 USE hbtn_0c_0;
-SELECT city,
-AVG((value - 32) * 5/9) AS average_temperature
+SELECT city, AVG(value) as avg_temp
 FROM temperatures
 GROUP BY city
-ORDER BY average_temperature DESC;
+ORDER BY avg_temp DESC
