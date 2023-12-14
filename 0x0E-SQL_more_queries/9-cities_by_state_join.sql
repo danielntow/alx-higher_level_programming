@@ -2,7 +2,7 @@
 SELECT cities.id, cities.name, states.name
 FROM cities, states
 WHERE states.id=state_id
-ORDER BY cities.id
+ORDER BY cities.id ASC
 
 /*
 -- Assuming the database name is passed as an argument, use the specified database
