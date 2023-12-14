@@ -1,11 +1,7 @@
--- Switch to the hbtn_0d_tvshows database
-USE hbtn_0d_tvshows;
-
 -- Get the genre_id linked to the show Dexter
 SELECT genre_id
 FROM tv_show_genres
 WHERE show_id = (SELECT id FROM tv_shows WHERE title = 'Dexter');
-
 -- Select all genres not linked to the show Dexter
 SELECT name
 FROM tv_genres
