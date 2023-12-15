@@ -1,5 +1,4 @@
 -- Get the genre_id linked to the show Dexter
-USE hbtn_0d_tvshows;
 SELECT name FROM tv_genres
 WHERE tv_genres.id NOT IN (
       SELECT tv_genres.id FROM tv_genres
