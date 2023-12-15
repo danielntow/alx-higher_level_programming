@@ -1,4 +1,5 @@
 -- Get the genre_id linked to the show Dexter
+USE hbtn_0d_tvshows;
 SELECT genre_id
 FROM tv_show_genres
 WHERE show_id = (SELECT id FROM tv_shows WHERE title = 'Dexter');

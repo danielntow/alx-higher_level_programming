@@ -1,6 +1,3 @@
--- Switch to the hbtn_0d_tvshows database
-USE hbtn_0d_tvshows;
-
 -- Get the genre_id for Comedy
 SET @comedy_genre_id = (SELECT id FROM tv_genres WHERE name = 'Comedy');
 
@@ -13,3 +10,4 @@ WHERE id NOT IN (
     WHERE genre_id = @comedy_genre_id
 )
 ORDER BY title ASC;
+
