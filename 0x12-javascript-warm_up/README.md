@@ -2,8 +2,6 @@
 
 # JavaScript
 
-# JavaScript Project
-
 ## Overview
 This project encompasses JavaScript development adhering to specific guidelines and requirements. It covers various aspects of JavaScript programming, including syntax, style, and execution environment.
 
@@ -38,19 +36,5 @@ This project encompasses JavaScript development adhering to specific guidelines 
 ## Files
 - `filename.js`: Sample JavaScript file adhering to specified requirements.
 
-## License
-This project is licensed under the [MIT License](link-to-your-license-file) - see the [LICENSE](link-to-your-license-file) file for details.
-
-
-
-
-```bash
-node script.js
-```
-
-
-
-
-Happy coding!
 
 ---
