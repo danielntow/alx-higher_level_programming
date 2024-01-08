@@ -1,8 +1,11 @@
 #!/usr/bin/node
-const numArgs = process.argv;
 
-if (numArgs[2]) {
-  console.log(numArgs[2]);
-} else {
+// Get the first argument from process.argv
+const arg = process.argv[2];
+
+// Check if an argument is provided and print accordingly
+if (!arg) {
   console.log('No argument');
+} else {
+  console.log(arg);
 }
