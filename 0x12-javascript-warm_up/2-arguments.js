@@ -1,5 +1,4 @@
 #!/usr/bin/node
-// Removed the incorrect import statement and used process directly
 const numArgs = process.argv.length - 2;
 
 if (numArgs === 0) {
