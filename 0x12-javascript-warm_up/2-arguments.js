@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const { argv } = require('node:process');
 // const numArgs = process.argv.length - 2
 const numArgs = argv.length - 2;
