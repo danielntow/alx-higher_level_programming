@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
-// const numArgs = process.argv.length - 2
-const numArgs = argv.length - 2;
+// Removed the incorrect import statement and used process directly
+const numArgs = process.argv.length - 2;
+
 if (numArgs === 0) {
   console.log('No argument');
 } else if (numArgs === 1) {
