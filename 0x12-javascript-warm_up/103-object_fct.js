@@ -7,9 +7,11 @@ const myObject = {
 
 console.log(myObject);
 
-myObject.incr = function increment () {
+function increment () {
   myObject.value++;
-};
+}
+
+myObject.incr = increment;
 
 console.log(myObject);
 myObject.incr();
