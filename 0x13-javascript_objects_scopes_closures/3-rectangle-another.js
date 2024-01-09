@@ -17,7 +17,7 @@ class Rectangle {
       for (let j = 0; j < this.width; j++) {
         row += 'x';
       }
-      console.log(row)
+      console.log(row);
     }
   }
 }
