@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
         # Display results
         for row in query_rows:
-            print(row)
+            print("{}".format(row))
 
     except MySQLdb.Error as e:
         print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
