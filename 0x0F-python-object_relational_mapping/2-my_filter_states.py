@@ -8,13 +8,13 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print(
-            "Usage: {} <username> <password> <database> <argument>".format(
-                sys.argv[0]
-            )
-        )
-        sys.exit(1)
+    # if len(sys.argv) != 5:
+    #     print(
+    #         "Usage: {} <username> <password> <database> <argument>".format(
+    #             sys.argv[0]
+    #         )
+    #     )
+    #     sys.exit(1)
 
     username, password, database, argument = sys.argv[1:]
 
