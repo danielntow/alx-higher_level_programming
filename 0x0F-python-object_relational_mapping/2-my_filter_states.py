@@ -1,37 +1,44 @@
 #!/usr/bin/python3
-"""
-Script displays all values in the states table of hbtn_0e_0_usa
-where name matches the argument.
-"""
+"""Display all values in the states table where name matches the argument"""
 
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    # if len(sys.argv) != 5:
-    #     print(
-    #         "Usage: {} <username> <password> <database> <argument>".format(
-    #             sys.argv[0]
-    #         )
-    #     )
-    #     sys.exit(1)
+    # Check if all arguments are provided
+    if len(sys.argv) != 5:
+        print("Usage: {} <username> <password> <database>\
+            <state_name>".format(sys.argv[0]))
+        sys.exit(1)
 
-    username, password, database, argument = sys.argv[1:]
+    # Assign command line arguments to variables
+    username, password, database, state_name = sys.argv[1:]
 
-    db = MySQLdb.connect(
-        host="localhost", port=3306, user=username, passwd=password,
-        db=database
-    )
+    try:
+        # Connect to MySQL server
+        db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                             passwd=password, db=database, charset="utf8")
+        cur = db.cursor()
 
-    cur = db.cursor()
-    # Execute query with parameterized query
-    cur.execute(
-        "SELECT * FROM states WHERE name IN (%s) ORDER BY id ASC", (argument,)
-    )
+        # Prepare SQL query with user input
+        query = "SELECT * FROM states WHERE name =\
+        '{}' ORDER BY id ASC".format(state_name)
 
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+        # Execute SQL query
+        cur.execute(query)
+        query_rows = cur.fetchall()
 
-    cur.close()
-    db.close()
+        # Display results
+        for row in query_rows:
+            print(row)
+
+    except MySQLdb.Error as e:
+        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
+        sys.exit(1)
+
+    finally:
+        # Close cursor and database connection
+        if 'cur' in locals() and cur:
+            cur.close()
+        if 'db' in locals() and db:
+            db.close()
