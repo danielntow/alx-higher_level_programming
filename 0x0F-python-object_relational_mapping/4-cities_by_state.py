@@ -20,7 +20,11 @@ if __name__ == "__main__":
         cur = db.cursor()
 
         # Execute SQL query to select all cities sorted by cities.id
-        cur.execute("SELECT id, name from cities ORDER BY state_id")
+        # Execute SQL query to select all cities sorted by cities.id
+        cur.execute("""SELECT cities.id, cities.name, states.name
+               FROM states
+               JOIN cities
+               ON states.id=cities.state_id""")
 
         # Fetch all rows at once
         query_rows = cur.fetchall()
