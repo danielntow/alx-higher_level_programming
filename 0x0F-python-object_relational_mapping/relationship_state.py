@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+state
+"""
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
@@ -12,7 +17,8 @@ class State(Base):
         name (str): Name of the state, up to 128 characters.
 
     Relationships:
-        cities (relationship): One-to-Many relationship with the City class. Deletes linked City objects when the State is deleted.
+        cities (relationship): One-to-Many relationship with the
+        City class. Deletes linked City objects when the State is deleted.
 
     Table Information:
         __tablename__ (str): Name of the database table for states.
@@ -23,4 +29,5 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
     # Define the relationship with the City class
-    cities = relationship('City', back_populates='state', cascade='all, delete-orphan')
+    cities = relationship(
+        'City', back_populates='state', cascade='all, delete-orphan')

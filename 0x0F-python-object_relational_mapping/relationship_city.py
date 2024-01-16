@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+relationship city
+"""
+
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from relationship_state import Base
@@ -20,7 +25,7 @@ class City(Base):
 
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)  # Define foreign key
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 
     # Define the relationship with the State class
     state = relationship('State', back_populates='cities')
