@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""List states with a name starting with N from the database hbtn_0e_0_usa"""
+"""
+List all states with a name starting with 'N'
+from the database hbtn_0e_0_usa
+"""
 
 import sys
 import MySQLdb
@@ -10,19 +13,28 @@ if __name__ == "__main__":
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
 
+    # Assign command line arguments to variables
     username, password, database = sys.argv[1:]
 
     try:
+        # Connect to MySQL server
         db = MySQLdb.connect(host="localhost", port=3306, user=username,
                              passwd=password, db=database, charset="utf8")
         cur = db.cursor()
 
-        # execute query
-        cur.execute("SELECT * FROM states WHERE \
-        name LIKE 'N%' ORDER BY id ASC")
+        # Execute SQL query to select states starting with 'N'
+        cur.execute("""
+            SELECT * FROM states
+            WHERE name LIKE 'N%'
+            ORDER BY id ASC
+        """)
+
+        # Fetch all rows at once
         query_rows = cur.fetchall()
+
+        # Display results
         for row in query_rows:
-            print("{}".format(row))
+            print(row)
 
     except MySQLdb.Error as e:
         print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
