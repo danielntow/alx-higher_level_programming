@@ -24,14 +24,14 @@ if __name__ == "__main__":
         # Create a session to interact with the database
         Session = sessionmaker(bind=engine)
         with Session() as session:
-            # Query and retrieve first State object, sorted by id
+            # Query and retrieve the first State object, sorted by id
             state = session.query(State).order_by(State.id).first()
 
             # Display results
             if state:
                 print("{}: {}".format(state.id, state.name))
             else:
-                print()
+                print("Nothing")
 
     except Exception as e:
         print("Error: {}".format(e))
