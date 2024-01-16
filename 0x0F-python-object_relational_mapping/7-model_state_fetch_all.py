@@ -3,7 +3,7 @@
 
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
@@ -17,25 +17,20 @@ if __name__ == "__main__":
 
     try:
         # Create the engine and bind it to the Base class
-        engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database), pool_pre_ping=True)
+        engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+            username, password, database), pool_pre_ping=True)
         Base.metadata.create_all(engine)
 
-        Session = sessionmaker(engine)
         # Create a session to interact with the database
-        session = Session()
+        Session = sessionmaker(bind=engine)
+        with Session() as session:
+            # Query and retrieve all State objects, sorted by id
+            states = session.query(State).order_by(State.id).all()
 
-        # Query and retrieve all State objects, sorted by id
-        states = session.query(State).order_by(State.id).all()
-
-        # Display results
-        for state in states:
-            print("{}: {}".format(state.id, state.name))
+            # Display results
+            for state in states:
+                print("{}: {}".format(state.id, state.name))
 
     except Exception as e:
         print("Error: {}".format(e))
         sys.exit(1)
-
-    finally:
-        # Close the session
-        if 'session' in locals() and session:
-            session.close()
