@@ -32,7 +32,7 @@ if __name__ == "__main__":
         query_rows = cur.fetchall()
 
         # Display results on a horizontal line
-        print(" ".join(row[0] for row in query_rows))
+        print(", ".join(row[0] for row in query_rows))
 
     except MySQLdb.Error as e:
         print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
