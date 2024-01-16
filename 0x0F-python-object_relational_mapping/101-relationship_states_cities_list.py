@@ -22,11 +22,12 @@ def list_states_cities(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query and retrieve all State objects, ordered by id
-    states = session.query(State).order_by(State.id)
+    # Query and retrieve all State and City objects with relationship,
+    # ordered by states.id and cities.id
+    results = session.query(State).order_by(State.id).all()
 
     # Display results
-    for state in states:
+    for state in results:
         print(f"{state.id}: {state.name}")
         for city in state.cities:
             print(f"\t{city.id}: {city.name}")
