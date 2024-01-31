@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-GitHub API Script: Display user id using Basic Authentication.
+GitHub API Script: Display GitHub user id using Basic Authentication.
 """
 import requests
 from sys import argv
@@ -10,15 +10,22 @@ if __name__ == "__main__":
     username = argv[1]
     password = argv[2]
 
-    # GitHub API endpoint for authenticated user
+    # GitHub API endpoint for user information
     api_url = "https://api.github.com/user"
 
-    # Sending GET request to GitHub API with Basic Authentication
-    response = requests.get(api_url, auth=(username, password))
+    # Creating a session with Basic Authentication
+    session = requests.Session()
+    session.auth = (username, password)
 
-    # Raise an exception for HTTP errors (4xx or 5xx)
-    response.raise_for_status()
+    try:
+        # Sending GET request to GitHub API for user information
+        response = session.get(api_url)
+        # Raise an exception for HTTP errors (4xx or 5xx)
+        response.raise_for_status()
 
-    # Extracting and printing the user id
-    user_id = response.json().get('id')
-    print(f"User ID: {user_id}")
+        # Extracting and printing the user id
+        user_id = response.json().get('id')
+        print(f"{user_id}")
+
+    except requests.exceptions.RequestException as e:
+        print("Error:", e)
