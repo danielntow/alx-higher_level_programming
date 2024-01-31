@@ -12,7 +12,9 @@ if __name__ == "__main__":
         values = {'q': sys.argv[1]}
     else:
         values = {'q': ""}
+
     response = requests.post(url, values)
+
     try:
         if (len(response.json()) > 0):
             print('[{}] {}'.format(response.json()
