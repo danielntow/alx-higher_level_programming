@@ -9,16 +9,13 @@ import requests
 if __name__ == "__main__":
     url = "https://alx-intranet.hbtn.io/status"
 
-    try:
-        # Sending a GET request to the specified URL
-        response = requests.get(url)
-        # Raise an exception for HTTP errors (4xx or 5xx)
-        response.raise_for_status()
+    # Sending a GET request to the specified URL
+    response = requests.get(url)
+    # Raise an exception for HTTP errors (4xx or 5xx)
+    response.raise_for_status()
 
-        # Displaying the body of the response with tabulation
-        print("- Body response:")
-        print("\t- type: {}".format(type(response.text)))
-        print("\t- content: {}".format(response.text))
-        print("\t- utf8 content: {}".format(response.text.encode('utf-8')))
-    except requests.exceptions.RequestException as e:
-        print("Error:", e)
+    # Displaying the body of the response with tabulation
+    print("- Body response:")
+    print("\t- type: {}".format(type(response.text)))
+    print("\t- content: {}".format(response.text))
+    print("\t- utf8 content: {}".format(response.text.encode('utf-8')))
