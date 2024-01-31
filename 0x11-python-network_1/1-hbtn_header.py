@@ -20,7 +20,7 @@ if __name__ == "__main__":
             # Checking if the 'X-Request-Id' header is present
             if 'X-Request-Id' in response.headers:
                 x_request_id = response.headers['X-Request-Id']
-                print("X-Request-Id:", x_request_id)
+                print(x_request_id)
             else:
                 print("X-Request-Id not found in the response headers.")
     except Exception as e:
