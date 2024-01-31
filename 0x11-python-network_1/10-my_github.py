@@ -13,5 +13,5 @@ if __name__ == "__main__":
     response = session.get(url)
     try:
         print('{}'.format(response.json()['id']))
-    except:
+    except Exception as e:
         print("None")
