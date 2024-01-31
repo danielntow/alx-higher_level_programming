@@ -28,4 +28,4 @@ if __name__ == "__main__":
         print(f"{user_id}")
 
     except requests.exceptions.RequestException as e:
-        print("Error:", e)
+        print("None")
