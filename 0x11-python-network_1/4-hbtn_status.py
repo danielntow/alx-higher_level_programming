@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/Users/dasarentow/anaconda3/bin/python3
 """
 Script documentation: Fetches the status from
 https://alx-intranet.hbtn.io/status using the requests package.
