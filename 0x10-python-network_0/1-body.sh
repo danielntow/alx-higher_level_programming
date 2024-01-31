@@ -1,3 +1,3 @@
 #!/bin/bash
-# returns the body of a status 200 response
-if [ "$(curl -s -I "$1" | grep "HTTP" | grep -o -e "[0-9][0-9][0-9]")" -eq 200 ]; then curl -s -X GET "$1"; fi
+# Write a Bash script that takes in a URL, sends a GET request to the URL, and displays the body of the response
+curl -sL "$1"
