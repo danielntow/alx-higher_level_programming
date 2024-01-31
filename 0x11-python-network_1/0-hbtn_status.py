@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""
-Write a Python script that fetches https://intranet.hbtn.io/status
-"""
-import urllib.request
+"""use the urllib module to fetch a webpage"""
+import urllib.request as req
 
-if __name__ == "__main__":
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        html = response.read()
-    print('Body response:')
-    print('\t- type: {}'.format(type(html)))
-    print('\t- content: {}'.format(html))
-    print('\t- utf8 content: {}'.format(html.decode("UTF-8")))
+
+fetched = req.Request('https://alx-intranet.hbtn.io/status')
+with req.urlopen(fetched) as ff:
+    content = ff.read()
+    print("Body response:")
+    print("\t- type: {}".format(type(content)))
+    print("\t- content: {}".format(content))
+    print("\t- utf8 content: {}".format(content.decode('utf-8')))
