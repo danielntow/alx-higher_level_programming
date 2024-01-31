@@ -1,26 +1,18 @@
 #!/usr/bin/python3
 """
-Script documentation: Fetches the status from
-https://alx-intranet.hbtn.io/status using urllib.
+Uses the urllib module to fetch a webpage.
 """
 
-import urllib.request
+import urllib.request as req
 
+url_to_fetch = 'https://alx-intranet.hbtn.io/status'
 
-def fetch_status(url):
-    with urllib.request.urlopen(url) as response:
-        # Reading and decoding the body of the response
-        content = response.read().decode('utf-8')
+with req.urlopen(url_to_fetch) as response:
+    # Reading and decoding the body of the response
+    content = response.read()
 
-        # Displaying the body of the response with tabulation
-        print("- Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-
-
-if __name__ == "__main__":
-    # URL to fetch
-    url = "https://alx-intranet.hbtn.io/status"
-
-    # Calling the function to fetch and display the status
-    fetch_status(url)
+    # Displaying the body of the response with tabulation
+    print("- Body response:")
+    print("\t- Type: {}".format(type(content)))
+    print("\t- Content: {}".format(content))
+    print("\t- UTF-8 Content: {}".format(content.decode('utf-8')))
